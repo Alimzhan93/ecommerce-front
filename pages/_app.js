@@ -3,11 +3,12 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@700&family=Roboto&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 body{
+  background-color: #eee;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Poppins',sans-serif;
 }
 `;
 
