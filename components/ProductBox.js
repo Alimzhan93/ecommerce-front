@@ -15,7 +15,7 @@ const WhiteBox = styled(Link)`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  img {
+  img{
     max-width: 100%;
     max-height: 80px;
   }
@@ -23,30 +23,41 @@ const WhiteBox = styled(Link)`
 
 const Title = styled(Link)`
   font-weight: normal;
-  font-size: 0.9rem;
-  color: inherit;
-  text-decoration: none;
-  margin: 0;
+  font-size:.9rem;
+  color:inherit;
+  text-decoration:none;
+  margin:0;
 `;
 
 const ProductInfoBox = styled.div`
   margin-top: 5px;
 `;
+
 const PriceRow = styled.div`
-  display: flex;
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 5px;
+  }
   align-items: center;
-  justify-content: space-between;
-  margin-top: 2px;
+  justify-content:space-between;
+  margin-top:2px;
 `;
 
-const Price =styled.div`
-font-size: 1.5rem;
-font-weight: 700;
-`
+const Price = styled.div`
+  font-size: 1rem;
+  font-weight:400;
+  text-align: right;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+    font-weight:600;
+    text-align: left;
+  }
+`;
 export default function ProductBox({ _id, title, description, price, images }) {
-  const {addProduct} =useContext(CartContext)
-  const url = '/product/'+_id;
-    return (
+  const { addProduct } = useContext(CartContext);
+  const url = "/product/" + _id;
+  return (
     <ProductWrapper>
       <WhiteBox href={url}>
         <div>
@@ -57,9 +68,9 @@ export default function ProductBox({ _id, title, description, price, images }) {
         <Title href={url}>{title}</Title>
         <PriceRow>
           <Price>${price}</Price>
-            <Button onClick={()=>addProduct(_id)} primary outline>
-              Add to cart
-            </Button> 
+          <Button onClick={() => addProduct(_id)} primary outline>
+            Add to cart
+          </Button>
         </PriceRow>
       </ProductInfoBox>
     </ProductWrapper>
